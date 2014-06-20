@@ -17,6 +17,36 @@
 		"before_title": "<h3 class=\"box-title\">",
 		"after_title": "</h3>",
 		"amount": "4"
+	},    
+	{
+		"name": "Banner Home",
+		"id": "banner-home",
+		"description": "Widgets area for the home-page banner",
+		"before_widget": "<div id=\"%1$s\" class=\"box %2$s\"><div>",
+		"after_widget": "</div></div>",
+		"before_title": "<h3 class=\"box-title\">",
+		"after_title": "</h3>",
+		"amount": "4"
+	},
+	{
+		"name": "Banner Categories",
+		"id": "banner-cat",
+		"description": "Widgets area for category listing banner",
+		"before_widget": "<div id=\"%1$s\" class=\"box %2$s\"><div>",
+		"after_widget": "</div></div>",
+		"before_title": "<h3 class=\"box-title\">",
+		"after_title": "</h3>",
+		"amount": "4"
+	},
+	{
+		"name": "Banner Single",
+		"id": "banner-single",
+		"description": "Widgets area for a single post",
+		"before_widget": "<div id=\"%1$s\" class=\"box %2$s\"><div>",
+		"after_widget": "</div></div>",
+		"before_title": "<h3 class=\"box-title\">",
+		"after_title": "</h3>",
+		"amount": "4"
 	},
 	{
 		"name": "Sidebar",

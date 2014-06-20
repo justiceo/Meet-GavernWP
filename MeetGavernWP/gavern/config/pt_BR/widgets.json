@@ -18,6 +18,15 @@
 		"after_title": "</h3>",
 		"amount": "4"
 	},
+    {
+		"name": "Banner Home",
+		"id": "banner-home",
+		"description": "Widgets area for home banner",
+		"before_widget": "<div id=\"%1$s\" class=\"box%2$s\"><div>",
+		"after_widget": "</div></div>",
+		"before_title": "<h3 class=\"box-title\">",
+		"after_title": "</h3>",
+	},
 	{
 		"name": "Sidebar",
 		"id": "sidebar",
