@@ -266,7 +266,7 @@ class GavernWP {
 	  
 	 private function add_features() {
 	 	// add support for the post formats
-	 	add_theme_support( 'post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat') ); 
+	 	add_theme_support( 'post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat') );         
 	 	// theme will style the visual editor using the editor-style.css file.
 	 	add_editor_style();
 	 	// add support for post thumbnails
@@ -291,6 +291,54 @@ class GavernWP {
 	 	register_widget('GK_Social_Widget');
 	 	register_widget('GK_NSP_Widget');
 	 	register_widget('GK_Tabs_Widget');
+
+        // add project as a post type
+        register_post_type( 'project',
+		array(
+			'labels' => array(
+				'name' => __( 'Projects' ),
+				'singular_name' => __( 'Project' ),
+                'add_new_item' => __( 'Add New Project' ),
+                'edit_item' => __( 'Edit Project' ),
+                'new_item' => __( 'New Project' ),
+                'view_item' => __( 'View Project' ),
+                'search_items' => __( 'Search Projects' ),
+                'not_found' => __( 'No Projects found' )
+			),
+		'public' => true,
+		'has_archive' => true,
+        'rewrite' => array('slug' => 'products'),
+        'supports' => array('title', 'editor', 'thumbnail', 'author', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', )
+
+		));
+        register_taxonomy_for_object_type( 'category', 'project' );
+
+        // add user as a post type
+        register_post_type( 'member',
+		array(
+			'labels' => array(
+				'name' => __( 'Members' ),
+				'singular_name' => __( 'Member' ),
+                'add_new_item' => __( 'Add New Member' ),
+                'edit_item' => __( 'Edit Member' ),
+                'new_item' => __( 'New Member' ),
+                'view_item' => __( 'View Member' ),
+                'search_items' => __( 'Search Members' ),
+                'not_found' => __( 'No Members found' )
+			),
+        'taxonomies' => array('category'),
+        'hierarchical' => false,		
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'query_var' => true,
+		'menu_icon' => null,
+		'has_archive' => true,
+        'rewrite' => array('slug' => 'members'),
+        'supports' => array('title', 'editor', 'thumbnail', 'author', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', )
+
+		));
+        register_taxonomy_for_object_type( 'post_tag', 'member' );
 	 }	
 	 
 	 /**

@@ -9,7 +9,7 @@
 global $tpl;
 
 gk_load('header');
-gk_load('before');
+gk_load('before-category');
 
 ?>
 
