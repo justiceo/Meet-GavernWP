@@ -36,8 +36,34 @@
 		<div id="gk-mainbody-columns" <?php if(get_option($tpl->name . '_page_layout', 'right') == 'left') : ?> class="gk-column-left"<?php endif; ?>>
 			<section>
 				<?php if(gk_is_active_sidebar('mainbody_top')) : ?>
-				<div id="gk-mainbody-top">
-					<?php gk_dynamic_sidebar('mainbody_top'); ?>
+				<div id="gk-mainbody-top">					
+
+                    <?php if ( 'member' == get_post_type()) : ?>
+                      <section>                     
+                       <article id="post-<?php the_ID(); ?>" class="member-post banner">       
+		                    <section class="member">
+                                <?php get_template_part( 'layouts/content.post.featured' ); ?>
+                                <header>
+			                        <?php get_template_part( 'layouts/content.post.header' ); ?>
+		                        </header>
+			                    
+		                    </section>
+                        </article>
+                        </section>
+                    <?php endif; ?>
+                    
+                    <?php if ( 'project' == get_post_type()) : ?>
+                      <section>                     
+                       <article id="post-<?php the_ID(); ?>" class="project-post banner">       
+		                    <section class="project">
+                                <header>
+			                        <?php get_template_part( 'layouts/content.post.header' ); ?>
+		                        </header>
+		                    </section>
+                        </article>
+                        </section>
+                    <?php endif; ?>
+                    
 				</div>
 				<?php endif; ?>
 				

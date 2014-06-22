@@ -38,6 +38,18 @@
 				<?php if(gk_is_active_sidebar('mainbody_top')) : ?>
 				<div id="gk-mainbody-top">
 					<?php gk_dynamic_sidebar('mainbody_top'); ?>
+                    <h1 class="page-title">
+			            <?php
+				            printf( __( ' %s', GKTPLNAME ), '<span>' . single_cat_title( '', false ) . '</span>' );
+			            ?>
+		            </h1>
+	
+		            <?php
+			            $category_description = category_description();
+			            if ( ! empty( $category_description ) )
+				            echo apply_filters( 'category_archive_meta', '<section class="intro">' . $category_description . '</section>' );
+		            ?>
+
 				</div>
 				<?php endif; ?>
 				

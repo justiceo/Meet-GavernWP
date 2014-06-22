@@ -82,11 +82,15 @@ article.member-post img {
 /*as banner*/
 article.member-post.banner {
     width:  100%;
+    float:  none;
+    max-width: 900px;
+    height: 350px;
+    margin: -30px 0px -30px ; /*to cancel padding set by gk-mainbody-top*/
     border: none;
-    overflow: visible;
-    position: static;
-    margin-bottom: 10px;
-    clear: both;
+}
+
+article.member-post.banner figure {
+    width:  35%;
 }
 
 
