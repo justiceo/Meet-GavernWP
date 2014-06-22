@@ -292,53 +292,7 @@ class GavernWP {
 	 	register_widget('GK_NSP_Widget');
 	 	register_widget('GK_Tabs_Widget');
 
-        // add project as a post type
-        register_post_type( 'project',
-		array(
-			'labels' => array(
-				'name' => __( 'Projects' ),
-				'singular_name' => __( 'Project' ),
-                'add_new_item' => __( 'Add New Project' ),
-                'edit_item' => __( 'Edit Project' ),
-                'new_item' => __( 'New Project' ),
-                'view_item' => __( 'View Project' ),
-                'search_items' => __( 'Search Projects' ),
-                'not_found' => __( 'No Projects found' )
-			),
-		'public' => true,
-		'has_archive' => true,
-        'rewrite' => array('slug' => 'products'),
-        'supports' => array('title', 'editor', 'thumbnail', 'author', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', )
-
-		));
-        register_taxonomy_for_object_type( 'category', 'project' );
-
-        // add user as a post type
-        register_post_type( 'member',
-		array(
-			'labels' => array(
-				'name' => __( 'Members' ),
-				'singular_name' => __( 'Member' ),
-                'add_new_item' => __( 'Add New Member' ),
-                'edit_item' => __( 'Edit Member' ),
-                'new_item' => __( 'New Member' ),
-                'view_item' => __( 'View Member' ),
-                'search_items' => __( 'Search Members' ),
-                'not_found' => __( 'No Members found' )
-			),
-        'taxonomies' => array('category'),
-        'hierarchical' => false,		
-		'public' => true,
-		'publicly_queryable' => true,
-		'show_ui' => true,
-		'query_var' => true,
-		'menu_icon' => null,
-		'has_archive' => true,
-        'rewrite' => array('slug' => 'members'),
-        'supports' => array('title', 'editor', 'thumbnail', 'author', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', )
-
-		));
-        register_taxonomy_for_object_type( 'post_tag', 'member' );
+       
 	 }	
 	 
 	 /**
@@ -521,5 +475,82 @@ class GavernWP {
    		return 'loaded';
    	}
 }
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+    // create project post type
+	register_post_type( 'project',
+		array(
+			'labels' => array(
+				'name' => __( 'Projects' ),
+				'singular_name' => __( 'Project' ),
+                'add_new_item' => __( 'Add New Project' ),
+                'edit_item' => __( 'Edit Project' ),
+                'new_item' => __( 'New Project' ),
+                'view_item' => __( 'View Project' ),
+                'search_items' => __( 'Search Projects' ),
+                'not_found' => __( 'No Projects found' )
+			),
+		'public' => true,
+		'has_archive' => true,
+        'taxonomies' => array('category'),
+        'rewrite' => array('slug' => 'project'),
+        'supports' => array('title', 'editor', 'thumbnail', 'author', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes',)
+
+		)
+	);
+
+     // create member post type
+	register_post_type( 'member',
+		array(
+			'labels' => array(
+				'name' => __( 'Members' ),
+				'singular_name' => __( 'Member' ),
+                'add_new_item' => __( 'Add New Member' ),
+                'edit_item' => __( 'Edit Member' ),
+                'new_item' => __( 'New Member' ),
+                'view_item' => __( 'View Member' ),
+                'search_items' => __( 'Search Members' ),
+                'not_found' => __( 'No Members found' )
+			),
+		'public' => true,
+		'has_archive' => true,
+        'taxonomies' => array('category'),
+        'rewrite' => array('slug' => 'member'),
+        'supports' => array('title', 'editor', 'thumbnail', 'author', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes',)
+
+		)
+	);
+}
+
+
+function people_init() {
+	// create a new taxonomy
+	register_taxonomy(
+		'people',
+		'post',
+		array(
+			'label' => __( 'People' ),
+			'rewrite' => array( 'slug' => 'person' ),
+			'capabilities' => array(
+				'assign_terms' => 'edit_guides',
+				'edit_terms' => 'publish_guides'
+			)
+		)
+	);
+ }
+add_action( 'init', 'people_init' );
+
+function add_custom_types_to_tax( $query ) {
+if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
+
+// Get all your post types
+$post_types = get_post_types();
+
+$query->set( 'post_type', $post_types );
+return $query;
+}
+}
+add_filter( 'pre_get_posts', 'add_custom_types_to_tax' );
 
 // EOF

@@ -15,6 +15,7 @@ gk_load('before-category');
 
 <section id="gk-mainbody" class="category-page">
 	<?php if ( have_posts() ) : ?>
+        <h1><?php the_title_rss(); ?></h1>
 	
 		<h1 class="page-title">
 			<?php

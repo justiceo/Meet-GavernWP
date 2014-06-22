@@ -23,7 +23,7 @@
 <?php endif; ?>
 
 <?php if(gk_is_active_sidebar('banner-single')) : ?>
-<div id="gk-top">
+<div id="gk-top" class="make-background">
 	<div class="gk-page widget-area">
 		<?php gk_dynamic_sidebar('banner-single'); ?>
 	</div>
@@ -31,7 +31,7 @@
 <?php endif; ?>
 
 
-<div class="gk-page-wrap">
+<div class="gk-page-wrap banner-space">
 	<div class="gk-page">
 		<div id="gk-mainbody-columns" <?php if(get_option($tpl->name . '_page_layout', 'right') == 'left') : ?> class="gk-column-left"<?php endif; ?>>
 			<section>
