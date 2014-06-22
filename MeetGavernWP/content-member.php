@@ -10,14 +10,14 @@ global $tpl;
 
 ?>
 
-	<article id="post-<?php the_ID(); ?>" class="article-post">		      
+	<article id="post-<?php the_ID(); ?>" class="member-post">
+		      
 		
         <!-- project archive begins here -->
 		<?php if ( is_search() || is_archive() || is_tag() ) : ?>
        
-		<section class="project">
+		<section class="member">
              <?php get_template_part( 'layouts/content.post.featured' ); ?>
-            
             <header>
 			    <?php get_template_part( 'layouts/content.post.header' ); ?>
 		    </header>

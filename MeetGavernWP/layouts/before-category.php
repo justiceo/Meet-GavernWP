@@ -27,7 +27,6 @@
 	<div class="gk-page widget-area">
 		<?php gk_dynamic_sidebar('banner-cat'); ?>
 	</div>
-    <h1><?php the_category(); ?></h1>
 </div>
 <?php endif; ?>
 

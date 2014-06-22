@@ -38,3 +38,48 @@ Tags: gray, two-columns, flexible-width
  * 15. (optional) Override for all CSS files (override.css)
  *
  **/
+
+.make-background {
+    background-color: #eee;
+    position: absolute;
+    width: 100%;
+    z-index: -2000;
+    max-height: 200px;
+    min-height: 200px;
+    
+}
+
+.make-background.home {
+    max-height: 600px;
+}
+
+.make-background .gk-page {
+    max-width: 100%;
+    padding: 0px;   
+}
+
+.make-background .gk-page .box {
+    padding: 0px;
+}
+
+#gk-top.make-background {
+    padding: 0px;
+}
+
+#gk-head + #gk-top.make-background{
+    padding: 0px;
+}
+
+
+.banner-space.home {
+    margin-top: 700px;
+}
+
+.banner-space {
+    margin-top: 300px;
+}
+
+
+body {
+    padding: 0px;
+}

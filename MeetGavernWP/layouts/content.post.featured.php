@@ -43,8 +43,9 @@ $params_image = isset($params['gavern-post-params-image']) ? esc_attr( $params['
 	
 	<?php elseif(has_post_thumbnail()) : ?>
 	<figure class="featured-image">
-		<a href="<?php the_permalink(); ?>">
+		<a href="<?php the_permalink(); ?>" class="post-thumb">
 			<?php the_post_thumbnail(); ?>
+            <span class="img-overlay"></span>
 		</a>
 		
 		<?php if(is_single() || is_page()) : ?>

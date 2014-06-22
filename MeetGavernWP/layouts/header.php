@@ -27,6 +27,8 @@
 		wp_enqueue_style('gavern-stuff', gavern_file_uri('css/stuff.css'), array('gavern-wp'));
 		wp_enqueue_style('gavern-wpextensions', gavern_file_uri('css/wp.extensions.css'), array('gavern-stuff'));
 		wp_enqueue_style('gavern-extensions', gavern_file_uri('css/extensions.css'), array('gavern-wpextensions'));
+        wp_enqueue_style('justice-banner', gavern_file_uri('css/banner.css'), false);
+        wp_enqueue_style('justice-overlay', gavern_file_uri('css/overlay.css'), false);
 	?>
 	<!--[if IE 9]>
 	<link rel="stylesheet" href="<?php echo gavern_file_uri('css/ie9.css'); ?>" />
