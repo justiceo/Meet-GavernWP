@@ -45,7 +45,32 @@
                                 <?php get_template_part( 'layouts/content.post.featured' ); ?>
                                 <header>
 			                        <?php get_template_part( 'layouts/content.post.header' ); ?>
+
+                                    <?php $custom_fields = get_post_custom(get_the_ID());
+                                    $custom_field = $custom_fields['member_title'];
+                                    foreach( $custom_field as $key => $value ) {
+                                        echo "<p class=\"mtitle\">" . $value . "</p>";
+                                    }
+
+                                    $custom_field = $custom_fields['member_location'];
+                                    foreach( $custom_field as $key => $value ) {
+                                        echo "<p class=\"mlocation\">" . $value . "</p>";
+                                    }
+
+                                    $custom_field = $custom_fields['member_contact'];
+                                    foreach( $custom_field as $key => $value ) {
+                                        echo "<p class=\"mcontact\">" . $value . "</p>";
+                                    }
+
+                                    $custom_field = $custom_fields['member_interests'];
+                                    foreach( $custom_field as $key => $value ) {
+                                        echo "<br />/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";
+                                        echo "<p class=\"minterests\">" . $value . "</p>";
+                                    }
+                                ?>
 		                        </header>
+            
+                                
 			                    
 		                    </section>
                         </article>

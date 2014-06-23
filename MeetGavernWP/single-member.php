@@ -15,8 +15,8 @@ gk_load('before-single');
 
 <section id="gk-mainbody">
 	<?php while ( have_posts() ) : the_post(); ?>
-		<?php get_template_part( 'content', 'member' ); ?>
 
+		<?php get_template_part( 'content', 'member' ); ?>
         			
 		<?php comments_template( '', true ); ?>
 		

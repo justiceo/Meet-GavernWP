@@ -16,8 +16,6 @@ gk_load('before-single');
 <section id="gk-mainbody">
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php get_template_part( 'content', 'project' ); ?>
-
-        <h1>inside single</h1>
 				
 		<?php comments_template( '', true ); ?>
 		

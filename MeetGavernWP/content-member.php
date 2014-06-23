@@ -36,12 +36,9 @@ global $tpl;
 	<?php else : ?>
         <article id="post-<?php the_ID(); ?>" class="member-detail">
 		    <section class="content"> 
+                
+			    <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', GKTPLNAME ) ); ?>			
 
-			    <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', GKTPLNAME ) ); ?>
-			
-
-			    <?php gk_post_fields(); ?>
-			    <?php gk_post_links(); ?>
 		    </section>
         </article>
 	<?php endif; ?>

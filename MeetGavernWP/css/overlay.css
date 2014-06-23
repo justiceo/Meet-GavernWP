@@ -91,7 +91,19 @@ article.member-post.banner {
 
 article.member-post.banner figure {
     width:  35%;
+    margin-right: 40px;
 }
 
+article.member-post.banner header h1 {
+    margin-bottom: 0px;
+}
+
+.mtitle, .mlocation, .mcontact {
+   font-size: 1.3em;
+    color:  #555;
+    font-style: italic;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 
     
