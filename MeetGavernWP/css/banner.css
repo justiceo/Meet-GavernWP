@@ -17,6 +17,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
 
 .make-background.home {
     height: 600px;
+    overflow: hidden;
 }
 
 .make-background .gk-page {
@@ -28,14 +29,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
     padding: 0px;
 }
 
-#gk-top.make-background {
+#gk-header.make-background {
     padding: 0px;
+    margin: 0px;
 }
 
 #gk-head + #gk-top.make-background{
     padding: 0px;
 }
-
 
 .gk-page-wrap.banner-space {
     margin-top: 150px;        
@@ -46,13 +47,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
     margin-top: 450px;
 }
 
-
+.banner-space.home #gk-mainbody-top {
+    padding-top: 50px;
+}
 
 #gk-mainbody-top {
     background-color: #fff;
     padding: 50px;
     margin-bottom: 30px;
-    border: 1px solid green;
+    border: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.page-mainbody {
+    margin-top: 150px;
 }
 
 body {

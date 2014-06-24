@@ -14,7 +14,7 @@ global $tpl;
 		
 <!-- project archive begins here -->
 <?php if ( is_search() || is_archive() || is_tag() ) : ?>
-    <article id="post-<?php the_ID(); ?>" class="article-post">		
+    <article id="post-<?php the_ID(); ?>" class="project-post">		
 		<section class="project">
              <?php get_template_part( 'layouts/content.post.featured' ); ?>
             

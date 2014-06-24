@@ -14,13 +14,15 @@
 	
 ?>
 
-<?php if(gk_is_active_sidebar('header')) : ?>
-	<div id="gk-header">
-		<div class="gk-page">
+
+<div id="gk-header" class="make-background">
+	<div class="gk-page">
+        <?php if(gk_is_active_sidebar('header')) : ?>
 			<?php gk_dynamic_sidebar('header'); ?>
-		</div>
+        <?php endif; ?>
 	</div>
-<?php endif; ?>
+</div>
+
 
 <?php if(gk_is_active_sidebar('top')) : ?>
 <div id="gk-top">

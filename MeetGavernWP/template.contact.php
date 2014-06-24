@@ -168,7 +168,8 @@ gk_load('before');
 
 ?>
 
-<section id="gk-mainbody" class="contactpage">
+<section id="gk-mainbody" class="contactpage page-mainbody">
+    <div class="shrink-page">
 	<?php the_post(); ?>
 	
 	<h1 class="page-title"><?php the_title(); ?></h1>
@@ -258,6 +259,7 @@ gk_load('before');
 			</form>
 		<?php endif; ?>
 	</article>
+    </div>
 </section>
 
 <?php

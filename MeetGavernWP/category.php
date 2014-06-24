@@ -15,18 +15,6 @@ gk_load('before-category');
 
 <section id="gk-mainbody" class="category-page">
 	<?php if ( have_posts() ) : ?>
-        
-		<h1 class="page-title">
-			<?php
-				printf( __( 'Category Archives: %s', GKTPLNAME ), '<span>' . single_cat_title( '', false ) . '</span>' );
-			?>
-		</h1>
-	
-		<?php
-			$category_description = category_description();
-			if ( ! empty( $category_description ) )
-				echo apply_filters( 'category_archive_meta', '<section class="intro">' . $category_description . '</section>' );
-		?>
 		
 		<?php do_action('gavernwp_before_loop'); ?>
 	

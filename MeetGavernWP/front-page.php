@@ -13,9 +13,32 @@
 global $tpl;
 
 gk_load('header');
-gk_load('before-home')
 ?>		
-	
+
+<?php if(gk_is_active_sidebar('header')) : ?>
+	<div id="gk-header" class="make-background home">
+		<div class="gk-page">
+			<?php gk_dynamic_sidebar('header'); ?>
+		</div>
+	</div>
+<?php endif; ?>
+
+<div class="gk-page-wrap banner-space home">
+	<div class="gk-page">
+		<div id="gk-mainbody-columns" <?php if(get_option($tpl->name . '_page_layout', 'right') == 'left') : ?> class="gk-column-left"<?php endif; ?>>
+			<section>
+				<?php if(gk_is_active_sidebar('mainbody_top')) : ?>
+				<div id="gk-mainbody-top">
+					<?php gk_dynamic_sidebar('mainbody_top'); ?>
+				</div>
+				<?php endif; ?>
+				
+				<!-- Mainbody, breadcrumbs -->
+				<?php if(gk_show_breadcrumbs()) : ?>
+				<div id="gk-breadcrumb-area">
+					<?php gk_breadcrumbs_output(); ?>
+				</div>
+				<?php endif; ?>	
 <?php ?>
 <?php if(get_option($tpl->name . '_template_homepage_mainbody', 'N') == 'N') : ?>
 		<?php do_action('gavernwp_before_mainbody'); ?>

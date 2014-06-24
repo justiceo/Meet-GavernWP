@@ -16,9 +16,6 @@
 /* 10.1. Base elements
 ==================================== */ 
 
-#gk-header {
-	margin: 0 -10px!important;
-}
 
 /* sidebar */
 #gk-mainbody-columns {
@@ -132,13 +129,14 @@
 ==================================== */ 
 
 #gk-mainmenu-toggle {
-	background: transparent url("../images/mobile_menu_btn.png") no-repeat 0 0;
+	background: transparent url("../images/menubtn.png") no-repeat 0 0;
 	display: block;
 	float: right;
 	height: 30px;
 	margin-top: 20px;
 	text-indent: -9999px;
 	width: 30px;
+    margin-right: 20px;
 }
 
 #gk-mainmenu-collapse {
@@ -162,10 +160,6 @@
 }
 
 #main-menu {
-	border: 1px solid #e5e5e5;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
 	float: none;
 }
 
@@ -202,8 +196,8 @@
 	border: none!important;
 	display: block;
 	float: none!important;
-	min-height: 28px!important;
-	line-height: 28px!important;
+	min-height: 48px!important;
+	line-height: 48px!important;
 	width: 100%;
 }
 
@@ -211,9 +205,9 @@
 	border-top: 1px solid #e5e5e5!important;
 	display: block!important;
 	font-size: 13px!important;
-	height: 28px!important;
-	line-height: 28px!important;
-	padding: 0 0 0 15px!important;
+	height: 48px!important;
+	line-height: 48px!important;
+	padding: 0 0 0 25px!important;
 	-webkit-transition: background-color .3s ease-out;
 	-moz-transition: background-color .3s ease-out;
 	-ms-transition: background-color .3s ease-out;
@@ -298,6 +292,7 @@
 .onlyTabltetsAndSmartphones {
 	display: block!important;
 }
+
 
 /* 10.7. Responsive tables
 ==================================== */
@@ -389,4 +384,21 @@ html[dir="rtl"] #main-menu li li li a {
 		left: 0;
 		right: 5px;
 	}
+}
+
+
+/* 10.8.X Post Types
+====================================*/
+
+article.article-post, article.project-post, article.member-post {
+    width: 100%;
+    float: none;
+}
+
+.gk-page-wrap.banner-space {
+    margin: 50px 20px 0px;
+}
+
+.page-mainbody {
+    margin-top: 50px;
 }
